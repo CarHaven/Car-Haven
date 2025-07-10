@@ -2,26 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Car Haven</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Haven - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background-color: #FDF0D5;
+      color: #003049;
+    }
+
+    header {
+      background-color: #780000;
+      padding: 1rem 2rem;
+      color: #FDF0D5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #FDF0D5;
+      font-weight: 700;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background-color: #FDF0D5;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: #780000;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #003049;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #003049;
+      color: #FDF0D5;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="nav-header">
-    <div class="nav-logo">Car Haven</div>
-    <nav class="nav-menu">
+  <header>
+    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="cars.html">Cars</a>
       <a href="#">Popularity</a>
     </nav>
   </header>
 
-  <section class="slogan-section">
-    <h1 class="brand-name">Car Haven</h1>
-    <h2 class="tagline">“All Things<br><span>Supercars</span>”</h2>
-    <a href="cars.html" class="explore-btn">Explore Cars</a>
+  <section class="hero">
+    <h1>Car Haven</h1>
+    <p>"All things super cars"</p>
   </section>
+
+  <footer>
+    &copy; 2025 Car Haven. Designed with speed & style.
+  </footer>
 </body>
 </html>
