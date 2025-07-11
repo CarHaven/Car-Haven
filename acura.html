@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>acura.html</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,6 +10,10 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #003049;
     }
 
@@ -39,66 +33,128 @@
       font-weight: 700;
     }
 
-    main {
+    .container {
       padding: 2rem;
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
       color: #780000;
-    }
-
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
+      font-size: 2.5rem;
     }
 
     p {
+      font-size: 1rem;
       line-height: 1.6;
-      margin-bottom: 1rem;
     }
 
-    strong {
-      color: #003049;
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 0 1rem;
+      background-color: #FDF0D5;
+      display: none;
+      overflow: hidden;
+      border-left: 3px solid #780000;
+      margin-bottom: 1rem;
+      animation: slideDown 0.4s ease forwards;
+    }
+
+    .panel img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
     }
   </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
 
-  <main>
+  <div class="container">
     <h1>Acura</h1>
     <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="acura_logo_upscaled_nobg.png" alt="Acura Logo" style="max-width: 300px; height: auto;" />
-</div>
+      <img src="acura_logo_upscaled_nobg.png" alt="Acura Logo" style="max-width: 300px; height: auto;" />
+    </div>
 
     <p><strong>History:</strong> Acura is the luxury and performance division of Honda, launched in 1986. It was the first Japanese luxury car brand, introducing vehicles that combined reliability with high-end appeal. Acura's early success in the U.S. market pushed Toyota and Nissan to launch their own luxury brands—Lexus and Infiniti.</p>
 
     <p><strong>Relations:</strong> Acura is a sub-brand of Honda and shares many platforms, engines, and technologies. Several Acura models are rebadged or upgraded versions of Honda vehicles, especially in terms of engineering and design philosophy.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Acura:</h2>
+
+      <button class="accordion">Acura NSX (Most Popular)</button>
+      <div class="panel">
+        <p>The NSX is Acura’s flagship supercar—sleek, hybrid-powered, and loaded with precision handling and futuristic design.</p>
+        <img src="acura_nsx.jpg" alt="Acura NSX">
+      </div>
+
+      <button class="accordion">Acura TLX</button>
+      <div class="panel">
+        <p>A sport sedan that blends luxury with performance. Available in powerful Type S variants with sharp styling and tech features.</p>
+        <img src="acura_tlx.jpg" alt="Acura TLX">
+      </div>
+
+      <button class="accordion">Acura MDX</button>
+      <div class="panel">
+        <p>A luxury SUV with three-row seating and premium features. Known for its comfort, reliability, and spaciousness.</p>
+        <img src="acura_mdx.jpg" alt="Acura MDX">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
