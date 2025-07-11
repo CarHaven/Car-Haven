@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>abarth.html</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -55,48 +45,126 @@
       font-size: 2.5rem;
     }
 
-    .placeholder-img {
-      width: 100%;
-      height: 300px;
-      background-color: #ddd;
+    .car-logo {
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-style: italic;
-      color: #666;
       margin: 2rem 0;
+    }
+
+    .car-logo img {
+      max-width: 300px;
+      height: auto;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.6;
     }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 0 1rem;
+      background-color: #FDF0D5;
+      display: none;
+      overflow: hidden;
+      border-left: 3px solid #780000;
+      margin-bottom: 1rem;
+      animation: slideDown 0.4s ease forwards;
+    }
+
+    .panel img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
+    }
   </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
 
   <div class="container">
     <h1>Abarth</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="abarth_logo_upscaled_nobg-removebg-preview.png" alt="Abarth Logo" style="max-width: 300px; height: auto;" />
-</div>
+
+    <div class="car-logo">
+      <img src="abarth_logo_upscaled_nobg-removebg-preview.png" alt="Abarth Logo" />
+    </div>
+
     <p><strong>History:</strong> Abarth is an Italian racing and road car maker founded in 1949. Known for tuning Fiat cars into performance beasts with a signature scorpion logo.</p>
     <p><strong>Relations:</strong> Abarth is closely tied with Fiat. Many Fiat models have high-performance Abarth variants.</p>
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Abarth:</h2>
+
+      <button class="accordion">Abarth 595 (Most Popular)</button>
+      <div class="panel">
+        <p>The Abarth 595 is a performance-tuned version of the Fiat 500. It's small, feisty, and full of Italian attitude with turbocharged power.</p>
+        <img src="abarth_595_image.png" alt="Abarth 595">
+      </div>
+
+      <button class="accordion">Abarth 124 Spider</button>
+      <div class="panel">
+        <p>This roadster blends Fiat’s elegance with Abarth's sporty performance. Lightweight, nimble, and with a punchy engine.</p>
+        <img src="abarth_124_spider.png" alt="Abarth 124 Spider">
+      </div>
+
+      <button class="accordion">Abarth Punto Evo</button>
+      <div class="panel">
+        <p>A hot hatch based on the Fiat Punto with upgraded styling and a more powerful engine. Loved in Europe for its agility and affordability.</p>
+        <img src="abarth_punto_evo.png" alt="Abarth Punto Evo">
+      </div>
+    </div>
   </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-<!-- partial -->
-  
-</body>
-</html>
+
