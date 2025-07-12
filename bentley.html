@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>bentley</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,6 +10,10 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #003049;
     }
 
@@ -39,7 +33,7 @@
       font-weight: 700;
     }
 
-    main {
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
@@ -51,54 +45,115 @@
       color: #780000;
     }
 
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
-    }
-
     p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
 
-    strong {
-      color: #003049;
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
 
-  <main>
+  <div class="container">
     <h1>Bentley</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="logo-Bentley.png" alt="Bentley Logo" style="max-width: 300px; height: auto;" />
-</div>
+
+    <div class="logo-img">
+      <img src="logo-Bentley.png" alt="Bentley Logo" />
+    </div>
 
     <p><strong>History:</strong> Bentley Motors Limited is a British manufacturer of luxury cars and SUVs founded in 1919. Known for hand-crafted interiors and powerful engines, Bentley represents elegance, prestige, and performance.</p>
 
     <p><strong>Relations:</strong> Bentley is a part of the Volkswagen Group and shares platforms and technologies with Audi and Porsche, especially under the hood and in infotainment systems.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Bentley:</h2>
+
+      <button class="accordion">Bentley Continental GT (Most Popular)</button>
+      <div class="panel">
+        <p>The Continental GT is the crown jewel of Bentley’s grand tourers. Luxurious yet ferocious, it houses a twin-turbo W12 or V8 engine and glides with majestic confidence.</p>
+      </div>
+
+      <button class="accordion">Bentley Bentayga</button>
+      <div class="panel">
+        <p>The Bentayga redefined luxury SUVs. With exquisite interiors, insane power, and off-road ability, it's the billionaire’s chariot on any terrain.</p>
+      </div>
+
+      <button class="accordion">Bentley Flying Spur</button>
+      <div class="panel">
+        <p>A luxury sedan that delivers limousine-level comfort with supercar-worthy speed. It's sleek, serious, and silently fast—a business class experience on wheels.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>

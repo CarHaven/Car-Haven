@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>aston martin</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,6 +10,10 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #003049;
     }
 
@@ -39,7 +33,7 @@
       font-weight: 700;
     }
 
-    main {
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
@@ -51,54 +45,115 @@
       color: #780000;
     }
 
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
-    }
-
     p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
 
-    strong {
-      color: #003049;
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
 
-  <main>
+  <div class="container">
     <h1>Aston Martin</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="aston-martin-logo.png" alt="Aston Martin Logo" style="max-width: 300px; height: auto;" />
-</div>
+
+    <div class="logo-img">
+      <img src="aston-martin-logo.png" alt="Aston Martin Logo" />
+    </div>
 
     <p><strong>History:</strong> Founded in 1913, Aston Martin is a British luxury sports car brand known for its sleek styling and strong performance. It rose to iconic status through its long association with the James Bond film franchise.</p>
 
     <p><strong>Relations:</strong> Aston Martin has had partnerships over the years with brands like Ford (former parent), and more recently Mercedes-AMG for engine and tech sharing.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Aston Martin:</h2>
+
+      <button class="accordion">Aston Martin DB5 (Most Popular)</button>
+      <div class="panel">
+        <p>Immortalized by James Bond, the DB5 is the most famous Aston Martin ever made. Stylish, elegant, and fast—it’s a timeless symbol of British motoring and cinematic history.</p>
+      </div>
+
+      <button class="accordion">Aston Martin Vantage</button>
+      <div class="panel">
+        <p>A fierce two-seater sports car with a V8 heart and aggressive styling. The Vantage is Aston Martin’s athlete, made for both track and luxury road driving.</p>
+      </div>
+
+      <button class="accordion">Aston Martin DBX</button>
+      <div class="panel">
+        <p>Breaking into the SUV market, the DBX combines Aston Martin’s signature elegance with utility and performance, offering a grand touring experience for adventurous drivers.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
