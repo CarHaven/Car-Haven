@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>genesis</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,8 +10,12 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-attachment: fixed;
       color: #003049;
     }
+
     header {
       background-color: #780000;
       padding: 1rem 2rem;
@@ -30,44 +24,84 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #FDF0D5;
       font-weight: 700;
     }
-    main {
+
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #780000;
     }
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
-    }
+
     p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
+
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
     strong {
       color: #003049;
     }
   </style>
 </head>
 <body>
-  <header>
+<header>
   <div style="display: flex; align-items: center;">
     <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
     <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
@@ -78,17 +112,47 @@
     <a href="#">Popularity</a>
   </nav>
 </header>
-  <main>
-    <h1>Genesis</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="Genesis-Logo.png" alt="Genesis Logo" style="max-width: 300px; height: auto;" />
+
+<div class="container">
+  <h1>Genesis</h1>
+
+  <div class="logo-img">
+    <img src="Genesis-Logo.png" alt="Genesis Logo" />
+  </div>
+
+  <p><strong>History:</strong> Genesis began as a luxury model under Hyundai and officially became its own brand in 2015. Known for its premium craftsmanship and advanced tech, Genesis quickly earned global praise for design and quality.</p>
+
+  <p><strong>Relations:</strong> Genesis is a sub-brand of Hyundai and shares platforms and engineering with Hyundai and Kia. Despite this, it maintains a distinct identity focused on luxury and elegance.</p>
+
+  <div class="accordion-section">
+    <h2 style="color:#780000;">Most Famous Car Models of Genesis:</h2>
+
+    <button class="accordion">Genesis G70</button>
+    <div class="panel">
+      <p>A compact luxury sedan that blends performance and refinement, giving serious competition to German rivals like the BMW 3 Series.</p>
+    </div>
+
+    <button class="accordion">Genesis G80</button>
+    <div class="panel">
+      <p>Mid-size luxury with big presence. The G80 is sleek, tech-rich, and oozes high-end vibes inside and out.</p>
+    </div>
+
+    <button class="accordion">Genesis GV80</button>
+    <div class="panel">
+      <p>The brand's first SUV. The GV80 makes a bold luxury statement with its sculpted design and plush interior—yeah, the one from the Genesis ads with John Legend.</p>
+    </div>
+  </div>
 </div>
-    <p><strong>History:</strong> Genesis began as a luxury model under Hyundai and officially became its own brand in 2015. Known for its premium craftsmanship and advanced tech, Genesis quickly earned global praise for design and quality.</p>
-    <p><strong>Relations:</strong> Genesis is a sub-brand of Hyundai and shares platforms and engineering with Hyundai and Kia. Despite this, it maintains a distinct identity focused on luxury and elegance.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+<script>
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(btn => {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 </body>
 </html>

@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>ford</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,8 +10,12 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-attachment: fixed;
       color: #003049;
     }
+
     header {
       background-color: #780000;
       padding: 1rem 2rem;
@@ -30,44 +24,84 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #FDF0D5;
       font-weight: 700;
     }
-    main {
+
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #780000;
     }
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
-    }
+
     p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
+
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
     strong {
       color: #003049;
     }
   </style>
 </head>
 <body>
-  <header>
+<header>
   <div style="display: flex; align-items: center;">
     <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
     <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
@@ -78,17 +112,47 @@
     <a href="#">Popularity</a>
   </nav>
 </header>
-  <main>
-    <h1>Ford</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="Ford-Logo.png" alt="Ford Logo" style="max-width: 300px; height: auto;" />
+
+<div class="container">
+  <h1>Ford</h1>
+
+  <div class="logo-img">
+    <img src="Ford-Logo.png" alt="Ford Logo" />
+  </div>
+
+  <p><strong>History:</strong> Founded by Henry Ford in 1903, Ford revolutionized the auto industry with the Model T and assembly line production. It remains one of the most influential and enduring carmakers globally.</p>
+
+  <p><strong>Relations:</strong> Ford owns Lincoln and has previously held stakes in Volvo, Aston Martin, and Mazda. Though independent now, it has historically shared tech and platforms with these brands.</p>
+
+  <div class="accordion-section">
+    <h2 style="color:#780000;">Most Famous Car Models of Ford:</h2>
+
+    <button class="accordion">Ford Mustang</button>
+    <div class="panel">
+      <p>The American muscle icon. Instantly recognizable, the Mustang blends power, style, and street legend status.</p>
+    </div>
+
+    <button class="accordion">Ford F-150</button>
+    <div class="panel">
+      <p>America's best-selling truck. Tough, reliable, and versatile—it hauls, tows, and conquers off-road trails like a beast.</p>
+    </div>
+
+    <button class="accordion">Ford GT</button>
+    <div class="panel">
+      <p>A hypercar born to race. Famous for its Le Mans victories, the GT shows Ford's performance engineering at its peak.</p>
+    </div>
+  </div>
 </div>
-    <p><strong>History:</strong> Founded by Henry Ford in 1903, Ford revolutionized the auto industry with the Model T and assembly line production. It remains one of the most influential and enduring carmakers globally.</p>
-    <p><strong>Relations:</strong> Ford owns Lincoln and has previously held stakes in Volvo, Aston Martin, and Mazda. Though independent now, it has historically shared tech and platforms with these brands.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+<script>
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(btn => {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 </body>
 </html>

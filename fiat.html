@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>fiat</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,8 +10,12 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-attachment: fixed;
       color: #003049;
     }
+
     header {
       background-color: #780000;
       padding: 1rem 2rem;
@@ -30,44 +24,84 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #FDF0D5;
       font-weight: 700;
     }
-    main {
+
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #780000;
     }
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
-    }
+
     p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
+
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
     strong {
       color: #003049;
     }
   </style>
 </head>
 <body>
-  <header>
+<header>
   <div style="display: flex; align-items: center;">
     <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
     <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
@@ -78,17 +112,47 @@
     <a href="#">Popularity</a>
   </nav>
 </header>
-  <main>
-    <h1>Fiat</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="Fiat-Logo.png" alt="Fiat Logo" style="max-width: 300px; height: auto;" />
+
+<div class="container">
+  <h1>Fiat</h1>
+
+  <div class="logo-img">
+    <img src="Fiat-Logo.png" alt="Fiat Logo" />
+  </div>
+
+  <p><strong>History:</strong> Fiat (Fabbrica Italiana Automobili Torino) was founded in 1899 and quickly became Italy’s largest car manufacturer. Known for affordable city cars and quirky design, it played a vital role in motorizing Europe post-WWII.</p>
+
+  <p><strong>Relations:</strong> Fiat is a core brand under Stellantis and has deep connections with Alfa Romeo, Jeep, Chrysler, and once Ferrari. It often shares platforms and technology with its sister brands.</p>
+
+  <div class="accordion-section">
+    <h2 style="color:#780000;">Most Famous Car Models of Fiat:</h2>
+
+    <button class="accordion">Fiat 500</button>
+    <div class="panel">
+      <p>An icon of Italy—compact, retro, and cute as hell. The 500 defined urban mobility and came back in style with the modern Fiat 500 series.</p>
+    </div>
+
+    <button class="accordion">Fiat Panda</button>
+    <div class="panel">
+      <p>Practical, boxy, and reliable. The Panda is a beloved city workhorse, famous across Europe for its rugged simplicity.</p>
+    </div>
+
+    <button class="accordion">Fiat Punto</button>
+    <div class="panel">
+      <p>One of Fiat’s best-selling hatchbacks, blending style, space, and affordability. Especially loved in India and Europe.</p>
+    </div>
+  </div>
 </div>
-    <p><strong>History:</strong> Fiat (Fabbrica Italiana Automobili Torino) was founded in 1899 and quickly became Italy’s largest car manufacturer. Known for affordable city cars and quirky design, it played a vital role in motorizing Europe post-WWII.</p>
-    <p><strong>Relations:</strong> Fiat is a core brand under Stellantis and has deep connections with Alfa Romeo, Jeep, Chrysler, and once Ferrari. It often shares platforms and technology with its sister brands.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+<script>
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(btn => {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 </body>
 </html>
