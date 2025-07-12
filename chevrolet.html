@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>chevrolet</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,8 +10,13 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #003049;
     }
+
     header {
       background-color: #780000;
       padding: 1rem 2rem;
@@ -30,65 +25,135 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #FDF0D5;
       font-weight: 700;
     }
-    main {
+
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #780000;
     }
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
-      margin: 2rem 0;
-    }
+
     p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
-    strong {
-      color: #003049;
+
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
-  <main>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
+
+  <div class="container">
     <h1>Chevrolet</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="chevrolet_logo.png" alt="Chevrolet Logo" style="max-width: 300px; height: auto;" />
-</div>
+
+    <div class="logo-img">
+      <img src="chevrolet_logo.png" alt="Chevrolet Logo" />
+    </div>
+
     <p><strong>History:</strong> Founded in 1911, Chevrolet—commonly known as Chevy—became a pillar of American automotive culture. Known for everything from muscle cars to family SUVs, it's one of the most iconic car brands worldwide.</p>
+
     <p><strong>Relations:</strong> Chevrolet is the flagship division of General Motors (GM) and shares platforms and components with GMC, Buick, and Cadillac.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Chevrolet:</h2>
+
+      <button class="accordion">Chevrolet Corvette (Most Popular)</button>
+      <div class="panel">
+        <p>The Corvette is America’s most legendary sports car—blending bold design, V8 performance, and supercar dynamics. The new mid-engine Corvette Stingray is a game-changer.</p>
+      </div>
+
+      <button class="accordion">Chevrolet Camaro</button>
+      <div class="panel">
+        <p>Muscle car meets modern tech. The Camaro delivers aggressive styling, track-ready trims, and the iconic roar that defines American power.</p>
+      </div>
+
+      <button class="accordion">Chevrolet Silverado</button>
+      <div class="panel">
+        <p>A full-size pickup with brute strength and modern comfort. From workhorse duty to luxury hauling, the Silverado is a staple in Chevy’s lineup.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
