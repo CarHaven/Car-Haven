@@ -35,19 +35,30 @@
 
     .container {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      color: #780000;
       font-size: 2.5rem;
+      color: #780000;
     }
 
     p {
-      font-size: 1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-img img {
+      max-width: 300px;
+      height: auto;
     }
 
     .accordion-section {
@@ -66,6 +77,7 @@
       font-size: 1.1rem;
       transition: background-color 0.3s ease;
       border-radius: 8px;
+      font-weight: bold;
     }
 
     .accordion:hover {
@@ -73,26 +85,15 @@
     }
 
     .panel {
-      padding: 0 1rem;
-      background-color: #FDF0D5;
+      padding: 1rem;
+      background-color: #fff;
       display: none;
       overflow: hidden;
-      border-left: 3px solid #780000;
+      border-left: 4px solid #780000;
       margin-bottom: 1rem;
-      animation: slideDown 0.4s ease forwards;
-    }
-
-    .panel img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; max-height: 0; }
-      to { opacity: 1; max-height: 500px; }
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
     }
   </style>
 </head>
@@ -111,8 +112,9 @@
 
   <div class="container">
     <h1>Acura</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-      <img src="acura_logo_upscaled_nobg.png" alt="Acura Logo" style="max-width: 300px; height: auto;" />
+
+    <div class="logo-img">
+      <img src="acura_logo_upscaled_nobg.png" alt="Acura Logo" />
     </div>
 
     <p><strong>History:</strong> Acura is the luxury and performance division of Honda, launched in 1986. It was the first Japanese luxury car brand, introducing vehicles that combined reliability with high-end appeal. Acura's early success in the U.S. market pushed Toyota and Nissan to launch their own luxury brands—Lexus and Infiniti.</p>
@@ -124,20 +126,17 @@
 
       <button class="accordion">Acura NSX (Most Popular)</button>
       <div class="panel">
-        <p>The NSX is Acura’s flagship supercar—sleek, hybrid-powered, and loaded with precision handling and futuristic design.</p>
-        <img src="acura_nsx_16x9.png" alt="Acura NSX">
+        <p>The Acura NSX is a hybrid-powered supercar that blends electrified performance with classic driving thrills. With its aggressive stance, lightweight materials, and all-wheel-drive system, the NSX is a futuristic showcase of Honda engineering wrapped in luxury and precision.</p>
       </div>
 
       <button class="accordion">Acura TLX</button>
       <div class="panel">
-        <p>A sport sedan that blends luxury with performance. Available in powerful Type S variants with sharp styling and tech features.</p>
-        <img src="acura_tlx_16x9.png" alt="Acura TLX">
+        <p>The TLX is Acura’s take on the modern sport sedan — sharp styling, a tech-rich interior, and performance variants like the Type S that offer serious thrills. It’s comfortable enough for the daily grind but aggressive enough to remind you that driving can still be fun.</p>
       </div>
 
       <button class="accordion">Acura MDX</button>
       <div class="panel">
-        <p>A luxury SUV with three-row seating and premium features. Known for its comfort, reliability, and spaciousness.</p>
-        <img src="acura_mdx_16x9.png" alt="Acura MDX">
+        <p>Luxury meets practicality in the Acura MDX. With three rows of seating, refined interior trims, and an available Super Handling All-Wheel Drive system, it’s a family SUV that doesn’t compromise on dynamics, making it both versatile and rewarding to drive.</p>
       </div>
     </div>
   </div>

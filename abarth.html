@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abarth</title>
+  <title>Abarth - Car Haven</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -35,14 +35,19 @@
 
     .container {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      color: #780000;
       font-size: 2.5rem;
+      color: #780000;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .car-logo {
@@ -54,11 +59,6 @@
     .car-logo img {
       max-width: 300px;
       height: auto;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
     }
 
     .accordion-section {
@@ -77,6 +77,7 @@
       font-size: 1.1rem;
       transition: background-color 0.3s ease;
       border-radius: 8px;
+      font-weight: bold;
     }
 
     .accordion:hover {
@@ -84,19 +85,16 @@
     }
 
     .panel {
-      padding: 0 1rem;
-      background-color: #FDF0D5;
+      padding: 1rem;
+      background-color: #fff;
       display: none;
       overflow: hidden;
-      border-left: 3px solid #780000;
+      border-left: 4px solid #780000;
       margin-bottom: 1rem;
       animation: slideDown 0.4s ease forwards;
-    }
-
-    .panel img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
     }
 
     @keyframes slideDown {
@@ -125,28 +123,26 @@
       <img src="abarth_logo_upscaled_nobg-removebg-preview.png" alt="Abarth Logo" />
     </div>
 
-    <p><strong>History:</strong> Abarth is an Italian racing and road car maker founded in 1949. Known for tuning Fiat cars into performance beasts with a signature scorpion logo.</p>
-    <p><strong>Relations:</strong> Abarth is closely tied with Fiat. Many Fiat models have high-performance Abarth variants.</p>
+    <p><strong>History:</strong> Abarth is an Italian racing and road car maker founded in 1949. Known for transforming modest Fiat models into roaring speed machines, Abarth quickly gained a reputation for performance tuning and motorsport dominance. Their scorpion logo became synonymous with punchy power and aggressive styling, all packed into compact packages.</p>
+
+    <p><strong>Relations:</strong> Abarth has always been closely tied with Fiat, acting as its performance arm. Many Fiat models, such as the 500 and Punto, have sportier Abarth variants with upgraded engines, suspension, and styling. Abarth’s presence helps Fiat appeal to the enthusiast market without needing a separate sports car brand.</p>
 
     <div class="accordion-section">
       <h2 style="color:#780000;">Most Famous Car Models of Abarth:</h2>
 
       <button class="accordion">Abarth 595 (Most Popular)</button>
       <div class="panel">
-        <p>The Abarth 595 is a performance-tuned version of the Fiat 500. It's small, feisty, and full of Italian attitude with turbocharged power.</p>
-        <img src="abarth_595_image.jpg" alt="Abarth 595">
+        <p>The Abarth 595 is the ultimate Italian pocket rocket. Based on the Fiat 500, it cranks up the fun with turbocharged performance, aggressive bumpers, and a growling exhaust note. It’s tiny but terrifying—in the best way possible.</p>
       </div>
 
       <button class="accordion">Abarth 124 Spider</button>
       <div class="panel">
-        <p>This roadster blends Fiat’s elegance with Abarth's sporty performance. Lightweight, nimble, and with a punchy engine.</p>
-        <img src="abarth_124_spider.png" alt="Abarth 124 Spider">
+        <p>This rear-wheel-drive roadster merges Mazda MX-5 underpinnings with Italian flair. Abarth tuned it for sharper handling, quicker throttle response, and of course, a more aggressive look. Top-down thrills meet top-tier tuning.</p>
       </div>
 
       <button class="accordion">Abarth Punto Evo</button>
       <div class="panel">
-        <p>A hot hatch based on the Fiat Punto with upgraded styling and a more powerful engine. Loved in Europe for its agility and affordability.</p>
-        <img src="abarth_punto_evo.png" alt="Abarth Punto Evo">
+        <p>The Abarth Punto Evo is a hot hatch made for corner carving. It’s an evolution of Fiat’s practical Punto, given a performance makeover with bold styling, improved aerodynamics, and a boosted engine. It remains a cult favorite in Europe.</p>
       </div>
     </div>
   </div>
@@ -167,4 +163,3 @@
   </script>
 </body>
 </html>
-

@@ -73,6 +73,7 @@
       font-size: 1.1rem;
       transition: background-color 0.3s ease;
       border-radius: 8px;
+      font-weight: bold;
     }
 
     .accordion:hover {
@@ -80,21 +81,16 @@
     }
 
     .panel {
-      padding: 0 1rem;
-      background-color: #FDF0D5;
+      padding: 1rem;
+      background-color: #fff;
       display: none;
       overflow: hidden;
-      border-left: 3px solid #780000;
+      border-left: 4px solid #780000;
       margin-bottom: 1rem;
       animation: slideDown 0.4s ease forwards;
-    }
-
-    .panel img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
     }
 
     @keyframes slideDown {
@@ -132,20 +128,17 @@
 
       <button class="accordion">Alfa Romeo Giulia (Most Popular)</button>
       <div class="panel">
-        <p>A sporty luxury sedan with powerful performance and sleek Italian design. It competes with the likes of the BMW 3 Series and Mercedes C-Class.</p>
-        <img src="https://images.unsplash.com/photo-1606312618472-817384962f8a?auto=format&fit=crop&w=800&q=80" alt="Alfa Romeo Giulia" style="max-width:100%; border-radius:8px; margin-top:1rem;">
+        <p>The Alfa Romeo Giulia is a celebration of Italian engineering — a luxury sedan that delivers precision handling, powerful turbocharged engines, and a driver-focused cockpit. Its aggressive stance and bold grille make it instantly recognizable, while its refined interior ensures every ride is as thrilling as it is comfortable.</p>
       </div>
 
       <button class="accordion">Alfa Romeo Stelvio</button>
       <div class="panel">
-        <p>Alfa’s performance SUV that blends utility with flair. It’s agile, fast, and stylish, perfect for those who want practicality without sacrificing looks.</p>
-        <img src="https://images.unsplash.com/photo-1617839633411-7b16991ddc55?auto=format&fit=crop&w=800&q=80" alt="Alfa Romeo Stelvio">
+        <p>Blending the versatility of an SUV with the soul of a sports car, the Stelvio brings Alfa’s racing heritage to a family-friendly frame. Its swift acceleration, responsive steering, and upscale interior make it a rare combination of utility and excitement — perfect for enthusiasts who refuse to settle.</p>
       </div>
 
       <button class="accordion">Alfa Romeo 4C</button>
       <div class="panel">
-        <p>A lightweight, mid-engine sports car known for its raw driving feel and stunning looks. It's more of a track toy than a daily driver.</p>
-        <img src="https://images.unsplash.com/photo-1587049352844-4c93f04918e0?auto=format&fit=crop&w=800&q=80" alt="Alfa Romeo 4C">
+        <p>Pure adrenaline on four wheels, the Alfa Romeo 4C is a mid-engine marvel built for the track but just street-legal enough for everyday thrills. Its carbon fiber monocoque chassis keeps it light and nimble, while its sculpted body turns heads with every curve. It’s not a car — it’s an experience.</p>
       </div>
     </div>
   </div>
