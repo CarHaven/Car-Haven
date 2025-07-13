@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>toyota</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toyota - Car Haven</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -20,8 +10,13 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #003049;
     }
+
     header {
       background-color: #780000;
       padding: 1rem 2rem;
@@ -30,65 +25,141 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #FDF0D5;
       font-weight: 700;
     }
-    main {
+
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #780000;
     }
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .car-logo {
       display: flex;
       justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
       margin: 2rem 0;
     }
-    p {
-      line-height: 1.6;
-      margin-bottom: 1rem;
+
+    .car-logo img {
+      max-width: 300px;
+      height: auto;
     }
-    strong {
-      color: #003049;
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      animation: slideDown 0.4s ease forwards;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
     }
   </style>
 </head>
 <body>
-<header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
-  <main>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
+
+  <div class="container">
     <h1>Toyota</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="Toyota-PNG-Transparent-Image.png" alt="Toyota Logo" style="max-width: 300px; height: auto;" />
-</div>
+
+    <div class="car-logo">
+      <img src="Toyota-PNG-Transparent-Image.png" alt="Toyota Logo" />
+    </div>
+
     <p><strong>History:</strong> Toyota, founded in 1937, rose to dominance with a focus on quality, efficiency, and durability. Known for icons like the Corolla, Supra, and Prius, Toyota blends reliability with subtle performance.</p>
+
     <p><strong>Relations:</strong> Toyota owns Lexus and has partnerships with Subaru, Suzuki, and Mazda. Its joint ventures help expand hybrid and EV tech across brands globally.</p>
-  </main>
-</body>
-</html>
-<!-- partial -->
-  
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Toyota:</h2>
+
+      <button class="accordion">Toyota Corolla</button>
+      <div class="panel">
+        <p>With over 50 million sold, the Corolla is the world’s best-selling car. Reliable, fuel-efficient, and affordable—it’s the definition of dependable daily driving.</p>
+      </div>
+
+      <button class="accordion">Toyota Supra</button>
+      <div class="panel">
+        <p>The Supra is Toyota’s performance legend, reborn in collaboration with BMW. Loved for its turbocharged punch and rear-wheel drive thrills.</p>
+      </div>
+
+      <button class="accordion">Toyota Prius</button>
+      <div class="panel">
+        <p>The Prius brought hybrids to the mainstream. It’s not flashy, but it’s iconic for efficiency and a symbol of eco-conscious driving since the early 2000s.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>

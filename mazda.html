@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>mazda</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,8 +10,13 @@
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #FDF0D5;
+      background-image: url('topography.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #003049;
     }
+
     header {
       background-color: #780000;
       padding: 1rem 2rem;
@@ -30,65 +25,142 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #FDF0D5;
       font-weight: 700;
     }
-    main {
+
+    .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #780000;
     }
-    .image-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #E0E0E0;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .car-logo {
       display: flex;
       justify-content: center;
-      align-items: center;
-      font-style: italic;
-      color: #666;
       margin: 2rem 0;
     }
-    p {
-      line-height: 1.6;
-      margin-bottom: 1rem;
+
+    .car-logo img {
+      max-width: 300px;
+      height: auto;
     }
-    strong {
-      color: #003049;
+
+    .accordion-section {
+      margin-top: 3rem;
+    }
+
+    .accordion {
+      background-color: #C1121F;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .accordion:hover {
+      background-color: #780000;
+    }
+
+    .panel {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+      overflow: hidden;
+      border-left: 4px solid #780000;
+      margin-bottom: 1rem;
+      animation: slideDown 0.4s ease forwards;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
     }
   </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center;">
-    <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
-    <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cars.html">Cars</a>
-    <a href="#">Popularity</a>
-  </nav>
-</header>
-  <main>
+    <div style="display: flex; align-items: center;">
+      <img src="Car Haven Logo.png" alt="Car Haven Logo" style="height: 40px; margin-right: 10px;" />
+      <div style="font-size: 1.5rem; font-weight: bold;">Car Haven</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="#">Popularity</a>
+    </nav>
+  </header>
+
+  <div class="container">
     <h1>Mazda</h1>
-    <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="Mazda-Logo-Transparent-PNG.png" alt="Mazda Logo" style="max-width: 300px; height: auto;" />
-</div>
+
+    <div class="car-logo">
+      <img src="Mazda-Logo-Transparent-PNG.png" alt="Mazda Logo" />
+    </div>
+
     <p><strong>History:</strong> Founded in 1920, Mazda started as a cork company before transitioning to automobiles. It gained fame for its use of rotary engines and its dedication to driving dynamics, especially in models like the MX-5 Miata.</p>
+
     <p><strong>Relations:</strong> Mazda previously partnered with Ford and now collaborates with Toyota on future EVs. It's one of the few brands to consistently embrace fun, lightweight vehicles.</p>
-  </main>
+
+    <div class="accordion-section">
+      <h2 style="color:#780000;">Most Famous Car Models of Mazda:</h2>
+
+      <button class="accordion">Mazda MX-5 Miata</button>
+      <div class="panel">
+        <p>The lightweight roadster that made open-top driving cool again. Rear-wheel drive, perfect balance, and a big smile factor. A cult icon.</p>
+      </div>
+
+      <button class="accordion">Mazda RX-7</button>
+      <div class="panel">
+        <p>The rotary-powered legend. Sleek, stylish, and an absolute drift darling. A JDM hero that still lives rent-free in every tuner’s heart.</p>
+      </div>
+
+      <button class="accordion">Mazda CX-5</button>
+      <div class="panel">
+        <p>A modern SUV that nails premium vibes without a luxury badge. It’s the crossover that proves practical can still mean stylish and fun.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-<!-- partial -->
-  
-</body>
-</html>
+
